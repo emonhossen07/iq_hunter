@@ -25,13 +25,27 @@ starCounter()
 
 // generate random input and question result
 function generateNumber() {
-    let num1 = Math.floor(Math.random() * 10);
-    let num2 = Math.floor(Math.random() * 10);
+    let num1 = Math.floor(Math.random() * 50);
+    let num2 = Math.floor(Math.random() * 50);
+
+    // let operator generator
+
+    let operators = ['+', '-', '*']
+    let operator = operators[Math.floor(Math.random() * operators.length)]
 
     const showQuestion = document.getElementById('question')
 
-    showQuestion.innerText = num1 + " + " + num2 + " = ? ";
-    questionResult = num1 + num2;
+    showQuestion.innerText = num1 + ` ${operator} ` + num2 + " = ? ";
+
+    if (operator === "+") {
+        questionResult = num1 + num2;
+    } else if (operator === "-") {
+        questionResult = num1 - num2;
+    } else {
+        questionResult = num1 * num2;
+    }
+
+
     document.getElementById('answer').value = '';
     document.getElementById('errors').innerText = '';
 }
@@ -44,6 +58,8 @@ function checkAnswer() {
 
     let getAnswer = document.getElementById('answer').value;
     let finalAnswer = parseInt(getAnswer)
+    // level call
+    let getLevel = document.getElementById('level')
     // error call
     const getError = document.getElementById('errors');
     console.log(finalAnswer);
@@ -63,14 +79,24 @@ function checkAnswer() {
             getError.innerText = 'Answer Is InCorrect'
             getError.style.color = 'yellow'
         }
-        console.log(rightAnswer, wrongAnswer);
-        if (wrongAnswer === 3) {
+
+        // level decrease
+        if (wrongAnswer === 1) {
+            getLevel.style.width = '66.33%'
+        } else if (wrongAnswer === 2) {
+            getLevel.style.width = '33.33%'
+        }
+        else if (wrongAnswer === 3) {
+            getLevel.style.width = '0%'
             const value = rightAnswer;
-            const negValue = wrongAnswer
-            window.location.href = "result.html?data=" + encodeURIComponent(value);
+            setTimeout(() => {
+                window.location.href = "result.html?data=" + encodeURIComponent(value);
+            }, 1000)
+
         } else {
             return;
         }
+
     }
 
 }
