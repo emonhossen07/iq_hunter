@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <!-- link css-->
     <link rel="stylesheet" href="../css/result.css">
+    <title>IQ Hunter - Result Page</title>
 </head>
 
 <body>
@@ -17,18 +17,22 @@
         </div>
         <div class="result">
             <div class="correct-answer">
-                <p>Correct</p>
-                <input id="correct-answer" type="text">
-            </div>
-            <div class="wrong-answer">
-                <p>Wrong</p>
-                <input id="wrong-answer" type="text">
+                <p>Score</p>
+                <input disabled id="correct-answer" type="text">
             </div>
         </div>
         <div class="home-button">
-            <a href="index.html">Rturn Home🡲</a>
+            <a href="../fontpage.html">Return Home🡲</a>
         </div>
     </div>
+
+    <!-- Js code here -->
+    <script>
+        const getValue = window.location.search;
+        const urlCode = new URLSearchParams(getValue);
+        const data = urlCode.get('data');
+        document.getElementById('correct-answer').value = data
+    </script>
 </body>
 
 </html>

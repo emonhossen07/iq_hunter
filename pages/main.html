@@ -7,28 +7,25 @@
     <!-- Fav Icon -->
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/main.css">
-    <title>IQ Hunter</title>
+    <title>IQ Hunter - Question Page</title>
 </head>
 
 <body>
 
     <section class="main-section">
-        <div class="anas-container">
-
+        <div class="container">
             <div id="timer">5</div>
-    
-            <h1>Welcome to IQ Hunter</h1>
-    
-            <h3>Questions: </h3>
+            <h1>WELCOME TO IQ HUNTER</h1>
+            <h3>Questions : </h3>
             <p id="question"></p>
             <div class="answers">
                 <input type="number" id="answer">
-                <button onclick="checkAnswer()" class="button-48" role="button">Check Answer</button>
+                <button class="my-button" onclick="checkAnswer()" role="button">Check Answer</button>
             </div>
+            <br>
+            <span id="errors"></span>
         </div>
     </section>
-
-
 
     <!-- Js Code -->
     <script src="../js/main.js"></script>

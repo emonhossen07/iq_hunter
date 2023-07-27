@@ -7,7 +7,7 @@ let wrongAnswer = 0;
 // timer set here
 
 function starCounter() {
-    let timeSet = 6;
+    let timeSet = 4;
     const timeSetElement = document.getElementById('timer');
 
     const countDownHandler = setInterval(() => {
@@ -33,6 +33,7 @@ function generateNumber() {
     showQuestion.innerText = num1 + " + " + num2 + " = ? ";
     questionResult = num1 + num2;
     document.getElementById('answer').value = '';
+    document.getElementById('errors').innerText = '';
 }
 generateNumber()
 
@@ -43,25 +44,38 @@ function checkAnswer() {
 
     let getAnswer = document.getElementById('answer').value;
     let finalAnswer = parseInt(getAnswer)
+    // error call
+    const getError = document.getElementById('errors');
+    console.log(finalAnswer);
 
-    if (finalAnswer === questionResult) {
-        rightAnswer += 1;
-        alert('Correct')
+    if (getAnswer === '') {
+        getError.innerText = 'Answer Not Empty'
+        getError.style.color = 'red'
+        /*  alert('Answer Not Empty') */
     } else {
-        wrongAnswer += 1;
-        alert('Incorrect')
+
+        if (finalAnswer === questionResult) {
+            rightAnswer += 1;
+            getError.innerText = 'Answer Is Correct'
+            getError.style.color = 'green'
+        } else {
+            wrongAnswer += 1;
+            getError.innerText = 'Answer Is InCorrect'
+            getError.style.color = 'yellow'
+        }
+        console.log(rightAnswer, wrongAnswer);
+        if (wrongAnswer === 3) {
+            const value = rightAnswer;
+            const negValue = wrongAnswer
+            window.location.href = "result.html?data=" + encodeURIComponent(value);
+        } else {
+            return;
+        }
     }
-    console.log(rightAnswer, wrongAnswer);
-    if (wrongAnswer === 3) {
-        window.location.href = "/result.html";
-    } else {
-        return;
-    }
+
 }
 
-
 // feature
-
 // timer
 // start game
 // result game
