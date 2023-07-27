@@ -67,7 +67,7 @@ a.my-button:active {
   transform: scale(0.95);
 }
 
-@media only screen and (max-width: 768px) and (min-width: 0px) {
+@media(max-width: 768px){
   .container {
     width: 300px;
     height: 400px;
