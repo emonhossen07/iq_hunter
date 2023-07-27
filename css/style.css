@@ -69,13 +69,13 @@ a.my-button:active {
 
 @media(max-width: 768px){
   .container {
-    width: 300px;
+    width: 320px;
     height: 400px;
-    padding: 20px;
+    padding: 15px;
   }
 
   .container h1 {
-    font-size: 35px;
+    font-size: 25px;
     margin-bottom: 40px;
   }
 }

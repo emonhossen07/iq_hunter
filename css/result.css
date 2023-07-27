@@ -5,6 +5,7 @@ body {
     background: rgb(0, 0, 0);
     background: radial-gradient(circle, rgb(31, 2, 30) 0%, rgba(72, 6, 98, 1) 100%);
 }
+
 .container {
     background: rgb(0, 0, 0);
     background: radial-gradient(circle, rgb(31, 2, 30) 0%, rgba(72, 6, 98, 1) 100%);
@@ -22,8 +23,8 @@ body {
     border-radius: 30px;
 }
 
-.heading {
-    font-size: 30px;
+.heading h1 {
+    font-size: 40px;
     color: white;
 }
 
@@ -32,7 +33,9 @@ body {
 }
 
 .result p {
-    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
 }
 
 .home-button a {
@@ -47,6 +50,7 @@ body {
     line-height: 24px;
 
 }
+
 .home-button a:hover {
     background: #000000;
     transition: all ease-in-out 0.6s;
@@ -76,10 +80,15 @@ body {
     outline: none;
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
     .container {
-        width: 300px;
+        width: 320px;
         height: 400px;
-        padding: 20px;
+        padding: 15px;
+    }
+
+    .heading h1 {
+        font-size: 25px;
+        color: white;
     }
 }
