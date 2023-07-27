@@ -25,8 +25,8 @@ starCounter()
 
 // generate random input and question result
 function generateNumber() {
-    let num1 = Math.floor(Math.random() * 50);
-    let num2 = Math.floor(Math.random() * 50);
+    let num1 = Math.floor(Math.random() * 13);
+    let num2 = Math.floor(Math.random() * 13);
 
     // let operator generator
 
